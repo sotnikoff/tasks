@@ -1,5 +1,6 @@
 class TasksController < ApplicationController
   before_action :set_task, only: %i[edit update show destroy]
+  before_action :authenticate_user!
 
   def index
     @tasks = Task.all
@@ -19,7 +20,7 @@ class TasksController < ApplicationController
 
   def create
     task = Task.new(task_params)
-    task.author = User.first
+    task.author = current_user
     if task.save
       redirect_to tasks_path, notice: "#{Task.model_name.human} created!"
     else
