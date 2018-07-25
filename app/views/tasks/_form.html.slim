@@ -1,0 +1,12 @@
+= form_with(model: task, local: true) do |form|
+  .form-group
+    = form.label :title
+    = form.text_field :title, class: 'form-control', required: true
+  .form-group
+    = form.label :description
+    = form.text_area :description, class: 'form-control'
+  .form-group
+    = form.label :assigned_to_id
+    = form.select :assigned_to_id, options_from_collection_for_select(User.all, 'id', 'full_name', 2), {}, {class: 'form-control'}
+  .form-group
+    = form.submit class: 'btn btn-outline-success'
