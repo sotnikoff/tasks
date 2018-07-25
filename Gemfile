@@ -16,6 +16,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'devise'
 gem 'kaminari'
 gem 'ransack'
+gem 'slim'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap'
@@ -41,6 +42,7 @@ group :test do
   gem 'capybara', '>= 2.15', '< 4.0'
   gem 'chromedriver-helper'
   gem 'selenium-webdriver'
+  gem 'simplecov'
 end
 
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
