@@ -2,7 +2,7 @@ addons:
   postgresql: 9.6
 before_script:
   - cp config/database.travis.yml config/database.yml
-  - psql -c 'create database movies_test;' -U postgres
+  - psql -c 'create database tasks_test;' -U postgres
   - gem install bundler
 dist: trusty
 language: ruby
