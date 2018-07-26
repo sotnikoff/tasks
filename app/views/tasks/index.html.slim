@@ -1,11 +1,19 @@
 h1 Tasks
+= search_form_for(@q) do |f|
+  .input-group
+    = f.search_field :title_or_description_cont, class: 'form-control', placeholder: 'search'
+    .input-group-append
+      = f.submit 'Search', class: 'btn btn-outline-success'
 p
-  = link_to 'Create', new_task_path, class: 'btn btn-outline-success'
+  .btn-group
+    = link_to 'Create', new_task_path, class: 'btn btn-outline-success'
+    - if params[:q]
+      = link_to 'Reset filter and sort', root_path, class: 'btn btn-outline-danger'
 table.table
   thead
     tr
-      th= Task.human_attribute_name :id
-      th= Task.human_attribute_name :title
+      th= sort_link(@q, :id)
+      th= sort_link(@q, :title)
       th= Task.human_attribute_name :description
   tbody
     - @tasks.each do |task|
