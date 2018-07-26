@@ -9,14 +9,14 @@ html
   body
     nav.navbar.navbar-expand-lg.navbar-light.bg-light
       = link_to 'Tasks', root_path, class: 'navbar-brand'
-      button.navbar-toggler[type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"]
+      button.navbar-toggler[type="button" data-toggle="collapse" data-target="#navbarSupportedContent"]
         span.navbar-toggler-icon
       #navbarSupportedContent.collapse.navbar-collapse
         ul.navbar-nav.mr-auto
-          li.nav-item
-            = link_to 'Edit profile', edit_user_registration_path, class: 'nav-link'
+          li.nav-item= link_to 'Edit profile', edit_user_registration_path, class: 'nav-link'
+          li.nav-item= link_to 'Log out', destroy_user_session_path, class: 'nav-link', method: :delete
         form.form-inline.my-2.my-lg-0
-          input.form-control.mr-sm-2[type="search" placeholder="Search" aria-label="Search"]
+          input.form-control.mr-sm-2[type="search" placeholder="Search"]
           button.btn.btn-outline-success.my-2.my-sm-0[type="submit"]
             | Search
     .container#main
