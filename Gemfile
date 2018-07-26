@@ -24,10 +24,11 @@ end
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'factory_bot_rails'
+  gem 'rails-controller-testing'
 end
 
 group :development do
-  gem 'factory_bot_rails'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'rails-erd'
   gem 'rspec-rails', '~> 3.7'
