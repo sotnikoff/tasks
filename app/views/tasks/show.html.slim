@@ -1,1 +1,22 @@
 h1 Task
+p
+  .btn-group
+    = link_to 'Edit', edit_task_path(@task), class: 'btn btn-outline-primary'
+    = link_to 'Delete', @task, class: 'btn btn-outline-danger', method: :delete
+table.table
+  tbody
+    tr
+      td= Task.human_attribute_name(:id)
+      td= @task.id
+    tr
+      td= Task.human_attribute_name(:title)
+      td= @task.title
+    tr
+      td= Task.human_attribute_name(:description)
+      td= @task.description
+    tr
+      td= Task.human_attribute_name(:author_id)
+      td= @task&.author.full_name
+    tr
+      td= Task.human_attribute_name(:assigned_to_id)
+      td= @task&.assigned_to.full_name
