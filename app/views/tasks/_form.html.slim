@@ -7,7 +7,7 @@
     = form.text_area :description, class: 'form-control'
   .form-group
     = form.label :assigned_to_id
-    = form.select :assigned_to_id, options_from_collection_for_select(User.all, 'id', 'full_name', task&.assigned_to.id),
+    = form.select :assigned_to_id, options_from_collection_for_select(User.all, 'id', 'full_name', task&.assigned_to&.id),
       {}, {class: 'form-control'}
   .form-group
     = form.submit class: 'btn btn-outline-success'
